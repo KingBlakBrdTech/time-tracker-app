@@ -1,0 +1,80 @@
+{
+  "name": "TimeEntry",
+  "type": "object",
+  "properties": {
+    "clock_in_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the employee clocked in"
+    },
+    "clock_out_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the employee clocked out"
+    },
+    "total_hours": {
+      "type": "number",
+      "description": "Total hours worked (calculated)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "clocked_in",
+        "clocked_out",
+        "on_break"
+      ],
+      "default": "clocked_out",
+      "description": "Current status of the employee"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the work session"
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Teaching",
+          "Admin",
+          "Planning",
+          "Other"
+        ]
+      },
+      "description": "Tasks performed during the session"
+    },
+    "location": {
+      "type": "string",
+      "enum": [
+        "Virgin Mary Mosque",
+        "Australian Islamic Centre",
+        "Maidstone Mosque",
+        "Circles of Light Centre",
+        "Remote"
+      ],
+      "description": "Work location or branch"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional notes for the time entry"
+    },
+    "break_duration": {
+      "type": "number",
+      "description": "Total break duration in minutes",
+      "default": 0
+    }
+  },
+  "required": [
+    "clock_in_time",
+    "date"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

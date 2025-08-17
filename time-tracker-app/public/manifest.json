@@ -1,0 +1,21 @@
+{
+  "name": "AQI Time Tracker",
+  "short_name": "AQI Tracker",
+  "description": "Professional time tracking system for Al-Noor Quranic Institute",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#1B447E",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
